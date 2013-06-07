@@ -1,0 +1,138 @@
+<!DOCUMENT HTML>
+<html>
+<head>
+
+<title>  Assignment#2       </title> <!-- Title of the page-->
+<style>
+
+</style>
+<!--linking Style Sheets-->
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/formstyle.css">
+<!-- linking Javascript Files-->
+
+<script type="text/javascript" src="js/genericjs.js"></script>
+
+</head><!--Head Ending-->
+
+<body><!-- body begining-->
+
+
+<div class="container" style="padding-top:20px"><!--Container-->
+<div class="row">
+<div class="span5 title offset4">
+Registration Form
+</div>
+</div>
+<form  onsubmit="return validateForm(this)">
+<div class=row>
+<div class="span2"><label>User Name</label></div><div class="span3"><input type="text" name="uname" placeholder="User Name"></div>
+</div>
+
+<div class=row>
+<div class="span2"><label>Password</label></div><div class="span3"><input type="password" name="pwd" placeholder="Password"></div>
+</div>
+
+<div class=row>
+<div class="span2"><label>Confirm Password</label></div><div class="span3"><input type="password" name="cpwd" placeholder="Confirm Password"></div>
+</div>
+
+<div class=row>
+<div class="span2"><label>First Name</label></div><div class="span3"><input type="text" name="fname" placeholder="First Name"></div>
+</div>
+
+<div class=row>
+<div class="span2"><label>Last Name</label></div><div class="span3"><input type="text" name="lname" placeholder="Last Name"></div>
+</div>
+
+<div class=row>
+<div class="span2">
+	<label>Gender</label>
+</div>
+<div class="span3">
+	<label class="radio inline">
+  		<input type="radio" name="gender" value="Male">Male
+	</label>
+	
+	<label class="radio inline">
+		  <input type="radio" name="gender" value="Female">Female
+	</label>
+</div>
+</div>
+
+<div class=row>
+<div class="span2">
+	<label>Qualification</label>
+</div>
+<div class="span2">
+	<select class="span2">
+			<option>Qualification</option>
+ 			<option >M.C.A</option>
+			<option >B.tech</option>
+			<option >M.B.A</option>
+			<option >B.Sc</option>
+			<option >ITI</option>
+                        <option >Other</option>
+	</select>
+</div>
+</div>
+
+<div class=row>
+<div class="span2">
+	<label>Email</label>
+</div>
+<div class="span3">
+	<input type="text" email="email" name="email" placeholder="Email">
+</div>
+</div>
+
+<div class=row>
+<div class="span2">
+	<label>Hobbies</label>
+</div>
+
+<div class="span10">
+ <label class="checkbox inline">
+      <input type="checkbox"> Singing
+    </label>
+<label class="checkbox inline">
+      <input type="checkbox"> Dancing
+    </label>
+
+<label class="checkbox inline">
+      <input type="checkbox"> Travelling
+</label>
+
+<label class="checkbox inline">
+      <input type="checkbox"> Painting
+</label>
+
+<label class="checkbox inline">
+      <input type="checkbox"> Gardening
+</label>
+<label class="checkbox inline">
+      <input type="checkbox"> Others
+</label>
+
+</div>
+</div>
+
+
+
+<div class=row>
+<div class="span2">
+<button class="btn btn-primary" type="submit">Register</button>
+</div>
+<div class="span2">
+		<button class="btn btn-danger" type="reset">Reset</button>
+</div>
+</div>
+
+</form>
+
+
+</div><!--Container-->
+</body>
+</html>
+

@@ -1,0 +1,207 @@
+var flag;
+function validateForm()
+{
+// User Name Validation
+	var user=myform.uname.value;
+	var patt1=/^[a-z A-Z 0-9]{5,8}$/;
+	var ulen=user.match(patt1);
+	
+	if(ulen==null || ulen=='')
+	{
+		document.getElementById('emsg').innerHTML =" Required and must be of length 5 to 8"
+		//uname.focus();
+		flag=0;
+		//return false;
+	}
+	else
+	{
+		document.getElementById('emsg').innerHTML = ""
+		flag=1;
+		//return true;
+		
+	}
+
+//Password Validation
+
+	var pwd=myform.pwd.value;
+	var patt1=/^[a-z A-Z 0-9]{1,6}$/;
+	var plen=pwd.match(patt1);
+
+	if(plen==null || plen=='')
+	{
+		document.getElementById('pwdemsg').innerHTML =" Required and must be of Maximum length 6"
+		flag=0;
+		//pwd.focus();
+		//return false;
+	}
+	else
+	{
+		document.getElementById('pwdemsg').innerHTML = ""
+		flag=1;
+		
+	}
+
+//First Name Validation
+
+	var fnamelength=myform.fname.value.length;
+
+
+	if(fnamelength<2 || fnamelength>6)
+	{
+		
+		document.getElementById('fnameemsg').innerHTML =" Required and must be of length 2 to 6 "
+		//fname.focus();
+		flag=0;
+		//return false;
+	}
+	else
+	{
+		document.getElementById('fnameemsg').innerHTML = ""
+		flag=1;
+	
+	}
+
+//Last Name Validation
+
+	var lnamelength=myform.lname.value.length;
+
+
+	if(lnamelength<2 || lnamelength>15)
+	{
+		
+		document.getElementById('lnameemsg').innerHTML =" Required and must be of length 2 to 15"
+		//lname.focus();
+		flag=0;
+		//return false;
+	}
+	else
+	{
+		document.getElementById('lnameemsg').innerHTML = ""
+		flag=1;
+
+	}
+
+
+
+//Phone Number Validation
+
+	var phno=myform.phno1.value;
+//	var patt1=/^\+91\(?([0-9]{3})\)?[\)]?\)[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;  
+	
+var patt1=/^\+\s[9{1}][]?[1{1}]\s ?[\)]?\([]?([0-9]{3})\)?[\)]?\)[]?[\)]?\-[]?([0-9]{3})?[\)]?\-[]?([0-9]{4})$/;
+	if(phno.match(patt1))
+	{
+		document.getElementById('phnoemsg').innerHTML = "(e.g + 91 (953)-305-8651)";
+		flag=1;		
+	}	
+	else
+	{
+		document.getElementById('phnoemsg').innerHTML = "<span style='color:red;font-size:12'>Format Should Be + 91 (953)-305-8651)</span>"
+		flag=0;
+		//phno.focus();
+		//return false;
+		//phno1.focus();
+	}
+
+//File Upload Validation	
+
+var fileName =myform.pic.value;
+
+var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+if(ext == "gif" || ext == "GIF" || ext == "JPG" || ext == "jpg" || ext == "png" || ext == "PNG")
+{
+document.getElementById('picemsg').innerHTML = " (jpg/gif/png)"
+flag=0;
+//return false;
+//pic.focus();
+} 
+else
+{
+document.getElementById('picemsg').innerHTML = "<span style='color:red;font-size:12'>Upload Only .gif/.jpg/.png Only</span>"
+flag=1;
+}
+
+//Country Select Box Validation
+
+var index=document.getElementById("countries").selectedIndex;
+	
+	if(index<0)
+	{
+		document.getElementById('countryemsg').innerHTML = " Required"
+		flag=0;
+		//countries.focus();
+		//return false;
+	}
+	else
+	{
+		document.getElementById('countryemsg').innerHTML = ""
+		flag=1;
+	}
+
+//Date of Birth Validation
+
+var dayindex=document.getElementById("daysel").selectedIndex;
+var monthindex=document.getElementById("monthsel").selectedIndex;
+var yearindex=document.getElementById("yearsel").selectedIndex;
+	
+	if(dayindex==0 || monthindex==0 || yearindex==0)
+	{
+		
+		document.getElementById('dobemsg').innerHTML = " Required"
+		flag=0;
+		//daysel.focus();
+		//return false;
+	}
+	else
+	{
+		document.getElementById('dobemsg').innerHTML = ""
+		flag=1;
+	}
+// Radio Button Validation
+var radios = document.getElementsByName("hob");
+    var formValid = false;
+    var i = 0;
+
+    while (!formValid && i < radios.length) {
+
+        if (radios[i].checked)
+		 formValid = true;
+	         i++;        
+    }
+
+    if (!formValid) 
+	{
+
+		document.getElementById('hobemsg').innerHTML = " Required"
+		flag=0;
+		//return false;
+	}
+	else
+	{
+		document.getElementById('hobemsg').innerHTML = " "
+		flag=1;
+	}
+
+
+//Displaying Message Box
+//alert(flag)
+
+var elem = document.getElementById("msgbox");
+if(flag==1)
+{
+	
+	elem.style.display="block";
+}
+else
+{
+	
+	elem.style.display="none";
+	
+}
+
+
+
+}//validateForm()
+
+
+

@@ -1,0 +1,253 @@
+
+
+
+
+
+
+
+
+
+
+
+//Password Validation
+function password_validation()
+{
+	pwd=myform.pwd.value;
+	var patt1=/^[a-z A-Z 0-9]{1,6}$/;
+	var plen=pwd.match(patt1);
+
+	if(plen==null || plen=='')
+	{
+		document.getElementById('pwdemsg').innerHTML =" Required and must be of Maximum length 6"
+		flag=0;
+		pwd.focus();
+		return false;
+	}
+	else
+	{
+		document.getElementById('pwdemsg').innerHTML = ""
+		flag=1;
+		return true;
+	}
+}
+
+/*
+//First Name Validation
+function fname_validation()
+{
+	var fnamelength=myform.fname.value.length;
+
+
+	if(fnamelength<2 || fnamelength>6)
+	{
+		
+		document.getElementById('fnameemsg').innerHTML =" Required and must be of length 2 to 6 "
+		//fname.focus();
+		flag=0;
+		return false;
+	}
+	else
+	{
+		document.getElementById('fnameemsg').innerHTML = ""
+		flag=1;
+		return true;
+	}
+}//fname_validation()
+
+//Last Name Validation
+
+function lname_validation()
+{
+
+	var lnamelength=myform.lname.value.length;
+
+
+	if(lnamelength<2 || lnamelength>15)
+	{
+		
+		document.getElementById('lnameemsg').innerHTML =" Required and must be of length 2 to 15"
+		//lname.focus();
+		flag=0;
+		return false;
+	}
+	else
+	{
+		document.getElementById('lnameemsg').innerHTML = ""
+		flag=1;
+		return true;
+	}
+
+}//lname_validation()
+
+//Phone Number Validation
+
+function phonenumber_validation()
+{
+	var phno=myform.phno1.value;
+//	var patt1=/^\+91\(?([0-9]{3})\)?[\)]?\)[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;  
+	
+var patt1=/^\+\s[9{1}][]?[1{1}]\s ?[\)]?\([]?([0-9]{3})\)?[\)]?\)[]?[\)]?\-[]?([0-9]{3})?[\)]?\-[]?([0-9]{4})$/;
+	if(phno.match(patt1))
+	{
+		document.getElementById('phnoemsg').innerHTML = "(e.g + 91 (953)-305-8651)";
+		flag=1;	
+		return true;	
+	}	
+	else
+	{
+		document.getElementById('phnoemsg').innerHTML = "<span style='color:red;font-size:12'>Format Should Be + 91 (953)-305-8651)</span>"
+		flag=0;
+		//phno.focus();
+		return false;
+		phno1.focus();
+	}
+}//phonenumber_validation()
+
+//File Upload Validation	
+
+function fileupload_validation()
+{
+var fileName =myform.pic.value;
+
+var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+if(ext == "gif" || ext == "GIF" || ext == "JPG" || ext == "jpg" || ext == "png" || ext == "PNG")
+{
+document.getElementById('picemsg').innerHTML = " (jpg/gif/png)"
+flag=0;
+return false;
+pic.focus();
+} 
+else
+{
+document.getElementById('picemsg').innerHTML = "<span style='color:red;font-size:12'>Upload Only .gif/.jpg/.png Only</span>"
+flag=1;
+return true;
+}
+}//fileupload_validation()
+
+//Country Select Box Validation
+
+function countryselect_validation()
+{
+
+var index=document.getElementById("countries").selectedIndex;
+	
+	if(index<0)
+	{
+		document.getElementById('countryemsg').innerHTML = " Required"
+		flag=0;
+		//countries.focus();
+		return false;
+	}
+	else
+	{
+		document.getElementById('countryemsg').innerHTML = ""
+		flag=1;
+		return true;
+	}
+}//countryselect_validation()
+
+//Date of Birth Validation
+
+function dob_validation()
+{
+var dayindex=document.getElementById("daysel").selectedIndex;
+var monthindex=document.getElementById("monthsel").selectedIndex;
+var yearindex=document.getElementById("yearsel").selectedIndex;
+	
+	if(dayindex==0 || monthindex==0 || yearindex==0)
+	{
+		
+		document.getElementById('dobemsg').innerHTML = " Required"
+		flag=0;
+		//daysel.focus();
+		return false;
+	}
+	else
+	{
+		document.getElementById('dobemsg').innerHTML = ""
+		flag=1;
+		return true;
+	}
+}//dob_validation()
+
+// Radio Button Validation
+
+function radio_validation()
+{
+var radios = document.getElementsByName("hob");
+    var formValid = false;
+    var i = 0;
+
+    while (!formValid && i < radios.length) {
+
+        if (radios[i].checked)
+		 formValid = true;
+	         i++;        
+    }
+
+    if (!formValid) 
+	{
+
+		document.getElementById('hobemsg').innerHTML = " Required"
+		flag=0;
+		return false;
+	}
+	else
+	{
+		document.getElementById('hobemsg').innerHTML = " "
+		flag=1;
+		return true;
+	}
+
+}//radio_validation()
+*/
+//Displaying Message Box
+//alert(flag)
+function msgBox()
+{
+var elem = document.getElementById("msgbox");
+if(flag==1)
+{
+	
+	elem.style.display="block";
+}
+else
+{
+	
+	elem.style.display="none";
+	
+}
+}//MmsgBox()
+
+function validateForm()
+{
+	
+	var u=document.getElementById('uname').value;
+
+	var p=document.getElementById('pwd').value;
+	if(u.value==null || u.value==" ")
+	{
+		username_validation();
+	}
+	else if(p.value==null || p.value==" ")
+	{
+		password_validation();
+	}
+	else
+	{
+	/*
+	fname_validation();
+	lname_validation();
+	phonenumber_validation();
+	fileupload_validation();
+	countryselect_validation();
+	dob_validation();
+	radio_validation();*/
+	msgBox();
+	//return true;
+	}
+return false;
+}//validateForm()
+
+

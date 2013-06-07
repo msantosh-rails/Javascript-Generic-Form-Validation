@@ -1,0 +1,29 @@
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+function fun1(frm)
+{
+	alert("hi");
+
+	for(var i=0;i<frm.length;i++)
+	{
+		var element=frm[i];
+		var type=frm[i].type;
+		//alert(type);
+		if(type=="text")
+		{
+			alert(element.getAttribute("email"));
+		}
+	}
+	
+}
+</script>
+
+</head>
+</body>
+<form onsubmit="return fun1(this)">
+<input type="text" email="emails">
+<input type="submit" value="submit">
+</form>
+</body>
+</html>

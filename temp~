@@ -1,0 +1,137 @@
+var radios = document.getElementsByName(ele.name);
+    	var formValid = false;
+    	var inc = 0;
+
+    while (!formValid && inc < radios.length) {
+		
+        if (radios[inc].checked)
+		 formValid = true;
+	         inc++;        
+    }
+
+    if(rcount==0)
+    {
+	    if (!formValid) 
+	    {
+		alert("Select Gender");
+		
+	    }
+	    else
+	    {
+		rcount++;
+            }
+    }
+
+
+
+
+
+
+
+
+
+var pwd=ele.value;
+	var patt1=/^[a-z A-Z 0-9]{1,6}$/;
+	var plen=pwd.match(patt1);
+
+	if(plen==null || plen=='')
+	{
+		alert(ele.name+" Maximum length is 6 and alphanumeric ");
+	}
+ele.focus();
+
+
+
+
+//Email Validation
+
+function validateEmail(ele)
+{
+	var email= ele.value;
+	alert(email);
+	var pattren=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;;
+	var res=email.match(pattern);
+	alert(res);
+}
+
+function validateEmail(ele)
+{
+	var email= ele.value;
+	alert(email);
+
+	var res=email.match(pattren);
+	alert(res);
+}
+
+
+
+
+
+
+
+
+<label class="checkbox inline">
+      <input type="checkbox"> Dancing
+    </label>
+
+<label class="checkbox inline">
+      <input type="checkbox"> Travelling
+</label>
+
+<label class="checkbox inline">
+      <input type="checkbox"> Painting
+</label>
+
+<label class="checkbox inline">
+      <input type="checkbox"> Gardening
+</label>
+<label class="checkbox inline">
+      <input type="checkbox"> Others
+</label>
+
+
+
+
+
+
+<div class=row>
+<div class="span2">
+	<label>Hobbies</label>
+</div>
+
+<div class="span10">
+ <label class="checkbox inline">
+      <input type="checkbox"> Singing
+    </label>
+
+</div>
+</div>
+
+
+
+
+
+if( element.type=="text")
+		{
+			validateText(element);
+		}
+		else if(element.type=="password")
+		{
+			validatePassword(element);
+		}
+		else if(element.type=="radio")
+		{
+			validateRadio(element);
+		}
+		
+		else if(element.type="select-one")
+		{
+			validateSelect(element);
+		}
+		else if(element.type="email")
+		{
+			alert("Write Email Validation");
+		}
+		else {
+			return true;
+		}		

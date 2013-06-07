@@ -1,0 +1,21 @@
+@font-face
+{
+font-family:myfont1;
+src: url('Aller_Lt.ttf')
+
+}
+.title
+{
+	font-family:myfont1;
+	font-size:30px;
+	padding:10px 0px 20px 0px;
+	font-weight:bold;
+}
+.row
+{
+	padding-top:10px;
+}
+input[type="text"],input[type="password"]
+{
+	height:25px;
+}
